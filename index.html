@@ -1,0 +1,65 @@
+<head>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+    integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+    integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+    integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+    crossorigin="anonymous"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+    integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+    crossorigin="anonymous"></script>
+
+  <title>Meme App</title>
+  <link rel="stylesheet" href="style.css">
+  </link>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="text-center">
+      <div class="row justify-content-md-center align-items-center">
+        <div class="col col-lg-2 align-self-center">
+          <button id="prev-image-id" type="button" class="btn btn-info">Prev</button>
+        </div>
+        <div class="col-12 col-md-auto align-self-center">
+          <div class="card">
+            <img id="meme-image-id" class="card-img-top meme-block" src="" alt="Card image cap">
+            <div class="card-block">
+              <p id="meme-title-id" class="card-text">UPDATE THE TITLE HERE!!!</p>
+              <p id="meme-likes-id" class="card-text">UPDATE THE LIKE NUMBRE HERE</p>
+              <div>
+                <button id="like-button-id" type="button" class="btn btn-success">Like</button>
+                <button id="dislike-button-id" type="button" class="btn btn-danger">Dislike</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col col-lg-2 align-self-center">
+          <button id="next-image-id" type="button" class="btn btn-info">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    // Set up memes.
+    var memes = [];
+    for (let i = 0; i < MEME_URLS.length; i++) {
+      // Create a new meme with the ID is i, meme URL and meme title.
+      const aMeme = new Meme(i, MEME_URLS[i], MEME_TITLES[i]);
+      memes.push(aMeme);
+      console.log(aMeme);
+    }
+
+    // SET UP THE CONTROLLER
+    var memeCtrl = new MemeController(memes, 0);
+    setUpButton(memeCtrl);
+  </script>
+</body>
