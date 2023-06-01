@@ -1,0 +1,19 @@
+#img {
+  margin: 8px;
+}
+
+#status {
+  padding: 8px;
+}
+
+.not-ready {
+  color: red;
+}
+
+.ready {
+  color: green;
+}
+
+.predict-button {
+  margin: 8px;
+}

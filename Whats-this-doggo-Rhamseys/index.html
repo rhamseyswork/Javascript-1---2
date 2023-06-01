@@ -1,0 +1,29 @@
+<html>    
+  <head>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Load the latest version of TensorFlow.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://unpkg.com/@tensorflow/tfjs"></script>
+    <script src="https://unpkg.com/@tensorflow-models/mobilenet"></script>
+  </head>
+  <body>
+    <h1>What's this doggo?</h1>
+    <div id="status" class="not-ready">Model is loading...</div>
+    <!-- Add an image that we will use to test -->
+    <div id="app">
+      <img id="img" crossorigin src="https://upload.wikimedia.org/wikipedia/commons/6/64/The_Puppy.jpg" width="227" height="227"/>
+      <br/>
+      <button type="button" class="predict-button btn btn-primary" onclick="predict()">What kind of dog is this?</button>
+      <h2>
+        Results
+      </h2>
+      <div id="result">
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
